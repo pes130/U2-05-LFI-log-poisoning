@@ -16,4 +16,7 @@ if ($full && str_starts_with($full, realpath($allowed_dir))) {
 } else {
     echo "<div class='container mt-4'><div class='alert alert-danger'>Página no encontrada o acceso denegado.</div></div>";
 }
+
+include(__DIR__ . '/includes/footer.php');
 ?>
+
