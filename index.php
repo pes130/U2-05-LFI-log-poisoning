@@ -1,7 +1,7 @@
 <?php
 // CTF LFI demo - intentionally vulnerable
 $allowed_dir = __DIR__ . '/pages/';
-$page = isset($_GET['page']) ? $_GET['page'] : 'about.php';
+$page = isset($_GET['page']) ? $_GET['page'] : 'main.php';
 
 // Small filter you can comment to make LFI easier:
 // $page = str_replace("..", "", $page);
