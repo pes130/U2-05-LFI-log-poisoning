@@ -41,8 +41,6 @@ sudo chmod 640 /var/log/auth.log /var/log/vsftpd.log
 # aplicar ACLs para lectura por www-data
 sudo setfacl -m u:www-data:r /var/log/auth.log /var/log/vsftpd.log
 
-# establecer ACL por defecto para nuevos inodos (no siempre aplicable a /var/log, pero lo ponemos)
-sudo setfacl -d -m u:www-data:r /var/log/auth.log /var/log/vsftpd.log || true
 ```
 
 ### Log rotate
@@ -86,5 +84,6 @@ Y si tienes /etc/logrotate.d/vsftpd:
         /usr/bin/setfacl -m u:www-data:r /var/log/vsftpd.log >/dev/null 2>&1 || true
     endscript
 }
-
 ```
+
+Voy a poner además un servicio systemd para resetar auth.log y vsftpd.log al arrancar.
